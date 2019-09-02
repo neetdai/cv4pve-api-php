@@ -223,8 +223,8 @@ class ClientBase {
         });
 
         if ($this->getDebugLevel() >= 1) {
-            echo "Method: " . method . " , Url: " . $url . "\n";
-            if (method != 'GET') {
+            echo "Method: " . $method . " , Url: " . $url . "\n";
+            if ($method != 'GET') {
                 echo "Parameters:\n";
                 var_dump($params);
             }
