@@ -51,6 +51,11 @@ class ClientBase {
     private $lastResult;
 
     /**
+     * @ignore
+     */
+    private $ignoreSSLVerifty = false;
+
+    /**
      * Client constructor.
      * @param string $hostname Host Proxmox VE
      * @param int $port Port connection default 8006
@@ -110,6 +115,15 @@ class ClientBase {
      */
     public function getResponseType() {
         return $this->responseType;
+    }
+
+    /**
+     * set ignore ssl verifty
+     * 
+     * @param boolean 
+     */
+    public function setIgnoreSSLVerifty($isIgnoreSSL) {
+        $this->ignoreSSLVerifty = $isIgnoreSSL;
     }
 
     /**
@@ -264,7 +278,9 @@ class ClientBase {
         curl_setopt($prox_ch, CURLOPT_HEADER, true);
         curl_setopt($prox_ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($prox_ch, CURLOPT_COOKIE, "PVEAuthCookie=" . $this->ticketPVEAuthCookie);
-        curl_setopt($prox_ch, CURLOPT_SSL_VERIFYPEER, false);
+        
+        curl_setopt($prox_ch, CURLOPT_SSL_VERIFYPEER, $this->ignoreSSLVerifty === false);
+        curl_setopt($prox_ch, CURLOPT_SSL_VERIFYHOST, $this->ignoreSSLVerifty === true? 0: 2);
 
         $response = curl_exec($prox_ch);
         $curlInfo = curl_getinfo($prox_ch);
