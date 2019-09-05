@@ -625,7 +625,7 @@ namespace Corsinvest\ProxmoxVE\Api {
             $params = ['clustername' => $clustername,
                 'nodeid' => $nodeid,
                 'votes' => $votes];
-            $this->addIndexedParameter($params, 'link', $linkN);
+            $this->client->addIndexedParameter($params, 'link', $linkN);
             return $this->client->create("/cluster/config", $params);
         }
 
@@ -740,7 +740,7 @@ namespace Corsinvest\ProxmoxVE\Api {
             $params = ['force' => $force,
                 'nodeid' => $nodeid,
                 'votes' => $votes];
-            $this->addIndexedParameter($params, 'link', $linkN);
+            $this->client->addIndexedParameter($params, 'link', $linkN);
             return $this->client->create("/cluster/config/nodes/{$this->node}", $params);
         }
 
@@ -813,7 +813,7 @@ namespace Corsinvest\ProxmoxVE\Api {
                 'force' => $force,
                 'nodeid' => $nodeid,
                 'votes' => $votes];
-            $this->addIndexedParameter($params, 'link', $linkN);
+            $this->client->addIndexedParameter($params, 'link', $linkN);
             return $this->client->create("/cluster/config/join", $params);
         }
 
@@ -4689,18 +4689,18 @@ namespace Corsinvest\ProxmoxVE\Api {
                 'vmgenid' => $vmgenid,
                 'vmstatestorage' => $vmstatestorage,
                 'watchdog' => $watchdog];
-            $this->addIndexedParameter($params, 'hostpci', $hostpciN);
-            $this->addIndexedParameter($params, 'ide', $ideN);
-            $this->addIndexedParameter($params, 'ipconfig', $ipconfigN);
-            $this->addIndexedParameter($params, 'net', $netN);
-            $this->addIndexedParameter($params, 'numa', $numaN);
-            $this->addIndexedParameter($params, 'parallel', $parallelN);
-            $this->addIndexedParameter($params, 'sata', $sataN);
-            $this->addIndexedParameter($params, 'scsi', $scsiN);
-            $this->addIndexedParameter($params, 'serial', $serialN);
-            $this->addIndexedParameter($params, 'unused', $unusedN);
-            $this->addIndexedParameter($params, 'usb', $usbN);
-            $this->addIndexedParameter($params, 'virtio', $virtioN);
+            $this->client->addIndexedParameter($params, 'hostpci', $hostpciN);
+            $this->client->addIndexedParameter($params, 'ide', $ideN);
+            $this->client->addIndexedParameter($params, 'ipconfig', $ipconfigN);
+            $this->client->addIndexedParameter($params, 'net', $netN);
+            $this->client->addIndexedParameter($params, 'numa', $numaN);
+            $this->client->addIndexedParameter($params, 'parallel', $parallelN);
+            $this->client->addIndexedParameter($params, 'sata', $sataN);
+            $this->client->addIndexedParameter($params, 'scsi', $scsiN);
+            $this->client->addIndexedParameter($params, 'serial', $serialN);
+            $this->client->addIndexedParameter($params, 'unused', $unusedN);
+            $this->client->addIndexedParameter($params, 'usb', $usbN);
+            $this->client->addIndexedParameter($params, 'virtio', $virtioN);
             return $this->client->create("/nodes/{$this->node}/qemu", $params);
         }
 
@@ -8166,18 +8166,18 @@ namespace Corsinvest\ProxmoxVE\Api {
                 'vmgenid' => $vmgenid,
                 'vmstatestorage' => $vmstatestorage,
                 'watchdog' => $watchdog];
-            $this->addIndexedParameter($params, 'hostpci', $hostpciN);
-            $this->addIndexedParameter($params, 'ide', $ideN);
-            $this->addIndexedParameter($params, 'ipconfig', $ipconfigN);
-            $this->addIndexedParameter($params, 'net', $netN);
-            $this->addIndexedParameter($params, 'numa', $numaN);
-            $this->addIndexedParameter($params, 'parallel', $parallelN);
-            $this->addIndexedParameter($params, 'sata', $sataN);
-            $this->addIndexedParameter($params, 'scsi', $scsiN);
-            $this->addIndexedParameter($params, 'serial', $serialN);
-            $this->addIndexedParameter($params, 'unused', $unusedN);
-            $this->addIndexedParameter($params, 'usb', $usbN);
-            $this->addIndexedParameter($params, 'virtio', $virtioN);
+            $this->client->addIndexedParameter($params, 'hostpci', $hostpciN);
+            $this->client->addIndexedParameter($params, 'ide', $ideN);
+            $this->client->addIndexedParameter($params, 'ipconfig', $ipconfigN);
+            $this->client->addIndexedParameter($params, 'net', $netN);
+            $this->client->addIndexedParameter($params, 'numa', $numaN);
+            $this->client->addIndexedParameter($params, 'parallel', $parallelN);
+            $this->client->addIndexedParameter($params, 'sata', $sataN);
+            $this->client->addIndexedParameter($params, 'scsi', $scsiN);
+            $this->client->addIndexedParameter($params, 'serial', $serialN);
+            $this->client->addIndexedParameter($params, 'unused', $unusedN);
+            $this->client->addIndexedParameter($params, 'usb', $usbN);
+            $this->client->addIndexedParameter($params, 'virtio', $virtioN);
             return $this->client->create("/nodes/{$this->node}/qemu/{$this->vmid}/config", $params);
         }
 
@@ -8421,18 +8421,18 @@ namespace Corsinvest\ProxmoxVE\Api {
                 'vmgenid' => $vmgenid,
                 'vmstatestorage' => $vmstatestorage,
                 'watchdog' => $watchdog];
-            $this->addIndexedParameter($params, 'hostpci', $hostpciN);
-            $this->addIndexedParameter($params, 'ide', $ideN);
-            $this->addIndexedParameter($params, 'ipconfig', $ipconfigN);
-            $this->addIndexedParameter($params, 'net', $netN);
-            $this->addIndexedParameter($params, 'numa', $numaN);
-            $this->addIndexedParameter($params, 'parallel', $parallelN);
-            $this->addIndexedParameter($params, 'sata', $sataN);
-            $this->addIndexedParameter($params, 'scsi', $scsiN);
-            $this->addIndexedParameter($params, 'serial', $serialN);
-            $this->addIndexedParameter($params, 'unused', $unusedN);
-            $this->addIndexedParameter($params, 'usb', $usbN);
-            $this->addIndexedParameter($params, 'virtio', $virtioN);
+            $this->client->addIndexedParameter($params, 'hostpci', $hostpciN);
+            $this->client->addIndexedParameter($params, 'ide', $ideN);
+            $this->client->addIndexedParameter($params, 'ipconfig', $ipconfigN);
+            $this->client->addIndexedParameter($params, 'net', $netN);
+            $this->client->addIndexedParameter($params, 'numa', $numaN);
+            $this->client->addIndexedParameter($params, 'parallel', $parallelN);
+            $this->client->addIndexedParameter($params, 'sata', $sataN);
+            $this->client->addIndexedParameter($params, 'scsi', $scsiN);
+            $this->client->addIndexedParameter($params, 'serial', $serialN);
+            $this->client->addIndexedParameter($params, 'unused', $unusedN);
+            $this->client->addIndexedParameter($params, 'usb', $usbN);
+            $this->client->addIndexedParameter($params, 'virtio', $virtioN);
             return $this->client->set("/nodes/{$this->node}/qemu/{$this->vmid}/config", $params);
         }
 
@@ -10435,9 +10435,9 @@ namespace Corsinvest\ProxmoxVE\Api {
                 'tty' => $tty,
                 'unique' => $unique,
                 'unprivileged' => $unprivileged];
-            $this->addIndexedParameter($params, 'mp', $mpN);
-            $this->addIndexedParameter($params, 'net', $netN);
-            $this->addIndexedParameter($params, 'unused', $unusedN);
+            $this->client->addIndexedParameter($params, 'mp', $mpN);
+            $this->client->addIndexedParameter($params, 'net', $netN);
+            $this->client->addIndexedParameter($params, 'unused', $unusedN);
             return $this->client->create("/nodes/{$this->node}/lxc", $params);
         }
 
@@ -10876,9 +10876,9 @@ namespace Corsinvest\ProxmoxVE\Api {
                 'template' => $template,
                 'tty' => $tty,
                 'unprivileged' => $unprivileged];
-            $this->addIndexedParameter($params, 'mp', $mpN);
-            $this->addIndexedParameter($params, 'net', $netN);
-            $this->addIndexedParameter($params, 'unused', $unusedN);
+            $this->client->addIndexedParameter($params, 'mp', $mpN);
+            $this->client->addIndexedParameter($params, 'net', $netN);
+            $this->client->addIndexedParameter($params, 'unused', $unusedN);
             return $this->client->set("/nodes/{$this->node}/lxc/{$this->vmid}/config", $params);
         }
 
